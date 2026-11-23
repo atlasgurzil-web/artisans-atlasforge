@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ease-emil: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    background-color: #F6F4EE;
+    color: #1F1B16;
+  }
+
+  /* Accessible focus indicators for keyboard navigation (WCAG 2.4.7) */
+  :focus-visible {
+    outline: 2px solid #C45525;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .ease-emil {
+    transition-timing-function: var(--ease-emil);
+  }
+
+  /* Emil Kowalski: tactile press feedback with zero jank */
+  .pressable {
+    transition: transform 160ms var(--ease-emil), background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    will-change: transform;
+  }
+  .pressable:active {
+    transform: scale(0.97);
+  }
+
+  .pressable-subtle {
+    transition: transform 160ms var(--ease-emil), background-color 150ms ease, border-color 150ms ease;
+    will-change: transform;
+  }
+  .pressable-subtle:active {
+    transform: scale(0.985);
+  }
+}
+
+@keyframes emilModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes emilBackdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-emil-modal {
+  animation: emilModalIn 200ms var(--ease-emil) forwards;
+  transform-origin: center;
+}
+
+.animate-emil-backdrop {
+  animation: emilBackdropIn 180ms ease-out forwards;
+}
