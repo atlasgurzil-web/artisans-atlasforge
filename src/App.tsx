@@ -3201,35 +3201,46 @@ export default function App() {
     document.title = 'Atlas Forge — Sites internet pour artisans et entreprises du bâtiment';
   }, []);
 
-  // Synchronisation avec le routage par hash (#/demo/slug)
+  // Synchronisation avec le routage (URL propre /demo/slug ou hash #/demo/slug)
   useEffect(() => {
-    const syncFromHash = () => {
+    const syncFromUrl = () => {
       const hash = window.location.hash || '';
-      const match = hash.match(/^#\/demo\/([a-z0-9-]+)$/);
-      if (match && DEMOS_METADATA.some((d) => d.slug === match[1])) {
-        setActiveDemoSlug(match[1]);
+      const pathname = window.location.pathname || '';
+      const matchHash = hash.match(/^#\/demo\/([a-z0-9-]+)$/);
+      const matchPath = pathname.match(/^\/demo\/([a-z0-9-]+)$/);
+      const slug = (matchHash && matchHash[1]) || (matchPath && matchPath[1]);
+      if (slug && DEMOS_METADATA.some((d) => d.slug === slug)) {
+        setActiveDemoSlug(slug);
       } else {
         setActiveDemoSlug(null);
       }
     };
-    syncFromHash();
-    window.addEventListener('hashchange', syncFromHash);
-    return () => window.removeEventListener('hashchange', syncFromHash);
+    syncFromUrl();
+    window.addEventListener('hashchange', syncFromUrl);
+    window.addEventListener('popstate', syncFromUrl);
+    return () => {
+      window.removeEventListener('hashchange', syncFromUrl);
+      window.removeEventListener('popstate', syncFromUrl);
+    };
   }, []);
 
   const openDemo = (slug: string) => {
     setActiveDemoSlug(slug);
     try {
-      window.location.hash = `/demo/${slug}`;
+      window.history.pushState({}, '', `/demo/${slug}`);
     } catch {
-      // Fallback sécurisé
+      window.location.hash = `/demo/${slug}`;
     }
   };
 
   const closeDemo = () => {
     setActiveDemoSlug(null);
     try {
-      window.location.hash = '/';
+      if (window.location.pathname.startsWith('/demo/')) {
+        window.history.pushState({}, '', '/');
+      } else {
+        window.location.hash = '/';
+      }
     } catch {
       // Fallback sécurisé
     }
