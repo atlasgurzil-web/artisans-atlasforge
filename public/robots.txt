@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://artisans-atlasforge.vercel.app/sitemap.xml
+Sitemap: https://artisans.atlasforge.space/sitemap.xml
