@@ -2,14 +2,124 @@
 <html lang="fr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C85A28' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atlas Forge — Sites internet pour artisans et entreprises locales</title>
-    <meta name="description" content="Création de sites internet sur mesure pour les artisans et professionnels du bâtiment : couverture, plomberie, électricité, menuiserie, paysagisme, zinguerie." />
+    
+    <!-- SEO & Indexation -->
+    <title>Atlas Forge — Création de sites internet pour artisans & entreprises du bâtiment</title>
+    <meta name="description" content="Atlas Forge conçoit des sites internet haute conversion pour artisans et professionnels du bâtiment : couverture, zinguerie, plomberie-chauffage, électricité, menuiserie et paysagisme. Obtenez plus de chantiers qualifiés dans votre secteur." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="keywords" content="création site internet artisan, site web bâtiment, agence web artisan btp, site couvreur zingueur, site plombier chauffagiste rge, devis site artisan, référencement local artisan" />
+    <meta name="author" content="Atlas Forge" />
+    <link rel="canonical" href="https://artisans-atlasforge.vercel.app/" />
+
+    <!-- Google Search Console Verification Meta Tag (remplacez le contenu par votre code fourni par Google) -->
+    <meta name="google-site-verification" content="" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Atlas Forge" />
+    <meta property="og:url" content="https://artisans-atlasforge.vercel.app/" />
+    <meta property="og:title" content="Atlas Forge — Sites web haute conversion pour artisans du bâtiment" />
+    <meta property="og:description" content="Sites internet sur-mesure pour artisans : couverture, plomberie, électricité, menuiserie, paysagisme. Découvrez 6 démos interactives en direct." />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://artisans-atlasforge.vercel.app/og-image.png" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Atlas Forge — Sites internet pour artisans" />
+    <meta name="twitter:description" content="Découvrez nos 6 démos de sites pour artisans du bâtiment conçues pour capter des chantiers rentables." />
+    <meta name="twitter:image" content="https://artisans-atlasforge.vercel.app/og-image.png" />
+
+    <!-- Theme & Icons -->
+    <meta name="theme-color" content="#C45525" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C85A28' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Données Structurées JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://artisans-atlasforge.vercel.app/#website",
+          "url": "https://artisans-atlasforge.vercel.app/",
+          "name": "Atlas Forge",
+          "description": "Création de sites internet sur-mesure pour les artisans du bâtiment et travaux publics.",
+          "inLanguage": "fr-FR"
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://artisans-atlasforge.vercel.app/#agency",
+          "name": "Atlas Forge — Création de sites internet pour artisans",
+          "url": "https://artisans-atlasforge.vercel.app/",
+          "description": "Atlas Forge conçoit des vitrines digitales haute performance et des simulateurs métiers pour les professionnels de l'artisanat et du bâtiment : couvreurs, zingueurs, plombiers chauffagistes RGE, électriciens, menuisiers et paysagistes.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "France"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Création de sites internet par métier de l'artisanat",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Site internet Couvreur Zingueur",
+                  "description": "Vitrine avec estimateur de toiture ardoise/tuile, garantie décennale et respect des DTU."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Site internet Plomberie Chauffage RGE",
+                  "description": "Site vitrine et capture de leads avec simulateur d'économies d'énergie et pompe à chaleur."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Site internet Gouttières Aluminium & Zinguerie",
+                  "description": "Outil de simulation de teintes et profilés alu sur-mesure sans soudure."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Site internet Électricien & Domotique",
+                  "description": "Vitrine spécialisée KNX, tableau électrique, bornes de recharge IRVE et dépannage."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Site internet Paysagiste & Aménagement extérieur",
+                  "description": "Mise en avant des créations de jardins, terrasses bois, piscines et entretien avec avantage fiscal."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Site internet Menuiserie d'art & Agencement",
+                  "description": "Valorisation du travail du bois massif sur mesure, ébénisterie et savoir-faire compagnon."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-[#F6F4EE] text-[#1F1B16] antialiased selection:bg-[#C45525] selection:text-white">
     <div id="root"></div>

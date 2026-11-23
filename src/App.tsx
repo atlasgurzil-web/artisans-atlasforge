@@ -42,6 +42,7 @@ import {
   Shield,
   Eye
 } from 'lucide-react';
+import { CookieBanner } from './CookieBanner';
 
 // ============================================================================
 // 1. CONFIGURATION WEBHOOK N8N & DONNÉES STRUCTURÉES
@@ -3888,6 +3889,18 @@ export default function App() {
                     Politique de confidentialité
                   </button>
                 </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      localStorage.removeItem('atlas_cookie_consent');
+                      window.location.reload();
+                    }}
+                    className="hover:text-white transition-colors cursor-pointer"
+                  >
+                    Gestion des cookies
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -3898,6 +3911,9 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Bandeau Cookies RGPD */}
+      <CookieBanner onOpenPrivacy={() => setLegalModal('confidentialite')} />
 
       {/* Modales Mentions légales & Confidentialité */}
       <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />

@@ -32,3 +32,6 @@ dist-ssr
 # Antigravity / Cache / Deploy
 .impeccable
 .vercel
+
+.vercel
+.env*
